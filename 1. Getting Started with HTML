@@ -15,6 +15,7 @@ Inline
 
 Empty/Void elements
 -single tag elements often used to embed or insert something
+<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png">
 
 
 Attribues
