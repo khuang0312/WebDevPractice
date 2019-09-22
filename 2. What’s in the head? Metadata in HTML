@@ -1,0 +1,21 @@
+HTML head - contents of <head> element
+<title> - metadata representing title of the HTML document
+<meta> - specifies character encoding 
+         <meta name=type of meta element; type of info it contains content=actual meta content>
+
+         <meta name="author" content="Chris Mills">
+         <meta name="description" content="The MDN Web Docs Learning Area aims to provide complete beginners to the Web with all they need to 
+          know to get started with developing web sites and applications.">
+
+favicon - favorites icon
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+save the favicon in the same directory as the index page
+.ico enables backwards compatibility to IE6, but .png, .gif, and other image formats are acceptable
+
+CSS - <link rel="stylesheet" href="my-css-file.css">
+JS - <script src="my-js-file.js"></script> (before closing body tag </body> to make sure your script doesn't access non-existing elements)
+
+<html lang="en-US"> - sets language of page for more effective searching and helping visually impaired people (screen-reading)
+<p>Japanese example: <span lang="ja">ご飯が熱い。</span>.</p> - setting a subsection as a different language (language tags)
+
+
