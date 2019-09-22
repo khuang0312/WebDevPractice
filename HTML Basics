@@ -1,0 +1,62 @@
+Element categories!
+==========================================================================
+-<opening tag>content</closing tag>
+-This whole thing is an element!
+
+Nesting elements...
+-<opening tag><inner opening tag>content</inner closing tag></closing tag>
+
+Block
+-appears on a new line
+-content after will appear on a new line
+
+Inline
+-contained within blocks, tend to surround small parts
+
+Empty/Void elements
+-single tag elements often used to embed or insert something
+
+
+Attribues
+============================================================================
+<element_name attribute_name="...">
+
+"anchor"
+<a href=https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started title="Mozilla's Tutorial" target="_blank">
+<p><a href=https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started title="Mozilla's Tutorial" target="_blank">Link</a></p>
+
+Boolean attributes
+<input type="text" disabled="disabled"> 
+<input type="text" disabled>
+<input type="text">
+
+sometimes attributes written without values
+they can only have one value--the attribute name
+
+<a href=https://www.mozilla.org/>favorite website</a>
+<a href=https://www.mozilla.org/ title=The Mozilla homepage>favorite website</a>
+always include attribute quotes; otherwise some words will be thought of as booleans...
+
+<!DOCTYPE html> - doctype
+<html> - root element; wraps all content on the page
+  <head> - container for stuff on the HTML that's not visible: keywords, page description, CSS, character set declarations, etc.
+    <meta charset="utf-8"> - character set; just include this
+    <title>My test page</title> - sets title in browser tab; title used when favoriting or bookmarking it
+  </head>
+  <body> - contains all content shown to users
+    <p>This is my page</p>
+  </body>
+</html>
+
+single quotes and double quotes are the same...
+don't mix them together ("this is bad')
+single quotes within double and vice-versa is okay ("It's okay!")
+if you use a double quote within a set of doubles or a single within a set of singles--character entity references!
+
+&code;
+
+ex: &quot; - "
+
+Whitespace is automatically trimmed down to one space; whitespace in code is often done for readability purposes
+
+<!-- comment --> for both single line and multi-line comments
