@@ -1,0 +1,61 @@
+Headers
+=====================================================================
+<h1> all the way to <h6>
+
+It's best to have one <h1> per page
+Don't do <h3> before <h2> or anything of the like...
+Try to only have 3 levels of headers
+
+Readers should be able to see things within minutes if not seconds
+Heading contents affect search results
+Screen readers use headers to provide outlines for readers
+Elements need to wrap content in order for CSS/JS to target it
+
+Importance of semantic code
+======================================================================
+Use the right elements: headers, paragraphs, etc.
+
+Non-semantic code (code without particularly special meanings)
+<span>content that you want to wrap with JS or CSS</span>
+
+unordered lists
+<ul>
+  <li>milk</li>
+  <li>eggs</li>
+  <li>bread</li>
+  <li>hummus</li>
+</ul>
+
+ordered lists
+<ol>
+  <li>Drive to the end of the road</li>
+  <li>Turn right</li>
+  <li>Go straight across the first two roundabouts</li>
+  <li>Turn left at the third roundabout</li>
+  <li>The school is on your right, 300 meters up the road</li>
+</ol>
+
+nested lists - try sticking ul or ol elements inside li elements
+
+Emphasis
+=============================================================================
+<em> -> italics by default...
+<span> and CSS or <i> is better though
+
+<strong> -> bold by default
+<span> and CSS or <b> is better...
+
+<u> - underline...
+
+presentational elements - only affect presentation and not semantics...
+<i> is used to convey a meaning traditionally conveyed by italic: Foreign words, taxonomic designation, technical terms, a thought...
+<b> is used to convey a meaning traditionally conveyed by bold: Key words, product names, lead sentence...
+<u> is used to convey a meaning traditionally conveyed by underline: Proper name, misspelling... (strong association with links)
+
+only use these3 if you can't come up with suitable alternatives to convey what you mean...
+
+
+
+
+
+
