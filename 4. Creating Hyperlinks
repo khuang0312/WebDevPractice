@@ -1,0 +1,101 @@
+The humble href
+===========================================================================================
+<a href="https://www.mozilla.org/en-US/"
+   title="The best place to find more information about Mozilla's
+          mission and how to contribute">the Mozilla homepage</a>.
+          
+href - hypertext reference, target attribute
+link title - only revealed on mouse hover; if it's that important, just render it on page
+
+just wrap anything with this!
+
+URLS
+==============================================================================================
+basically file paths
+
+root directory contains the index html that is the main landing point for our site
+
+accessing another file in the same directory
+<a href="other_file.html"></a>
+
+accessing file in a sub-directory
+<a href="sub-directory_name/other_file.html"></a>
+
+moving back up to a file in a parent directory
+<a href="../other_file.html"></a>
+
+these can be chained...
+<a href="../../../other_file.html"></a>
+
+
+
+document fragments - specific part of an HTML Document
+to link to one, assign an id attribute to an element (often an heading)
+
+<h2 id="Mailing_address">Mailing address</h2>
+<p>Want to write us a letter? Use our <a href="contacts.html#Mailing_address">mailing address</a>.</p>
+
+Put #id after the HTML file the fragment is in
+
+<p>The <a href="#Mailing_address">company mailing address</a> can be found at the bottom of this page.</p>
+
+If the fragment is in the same file, just put the #id 
+
+
+
+Best Practices
+=========================================================================================================
+absolute URL: Points to a location defined by its absolute location on the web, including protocol and domain name
+
+http://www.example.com/projects/index.html
+http://www.example.com/projects/ (web servers usually select index.html if file not specified)
+
+relative URL:  Points to a location that is relative to the file you are linking from
+
+pdfs/project-brief.pdf
+
+Screenreaders jump around link to link and can read links out of context
+Search engines use links to target index files 
+People skim
+
+Therefore...
+
+Don't actually type links out (UGLY!)
+Don't say "links to" or variants...
+Keep link labels short 
+Minimize duplicate link labels
+
+Use relative links when possible (easier to scan, more efficient since it searches local server instead of DNS)
+Absolute links are only when the link is another website's
+
+Linking to sources that will be downloaded -- add clear wording
+
+<p><a href="http://www.example.com/car-game">
+  Play the car game (requires Flash)
+</a></p>
+
+Use download attribute to provide a default file name
+
+<a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+   download="firefox-latest-64bit-installer.exe">
+  Download Latest Firefox for Windows (64-bit) (English, US)
+</a>
+
+
+Email links
+================================================================================================================================
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+
+leaving email out allows user to specify whom to send their email...
+
+<a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+  Send mail with cc, bcc, subject and body
+</a>
+
+The values of each field must be URL-encoded (certain symbols must be escaped with %)
+? separates each field
+This is standard URL notation... for GET Method...
+
+
+
+
