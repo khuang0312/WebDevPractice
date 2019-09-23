@@ -31,6 +31,40 @@ inline quote <q>
 intended for short quotations that don't require paragraph breaks
 will have quotes
 
+cite attribute doesn't really do much unless you make your own CSS or JS that uses it
+<cite> contains the title. You could use an anchor to link it to somewhere else...
+
+Abbreviations
+=================================================================================================
+
+<abbr title=""> - pretty much for both abbreviations and acronyms; title attribute is when you hover over
+<acronym title=""> - most people use abbr out of convenience
+
+Addresses
+=================================================================================================
+For contact information or even links to other pages!
+
+<address></address>
+
+Super/Subscripts
+==================================================================================================
+<sup>
+<sub>
+
+Representing Code
+===================================================================================================
+<code>: For marking up generic pieces of computer code.
+<pre>: For retaining whitespace (generally code blocks) — whitespace will be rendered identically to your text editor.
+<var>: For specifically marking up variable names.
+<kbd>: For marking up keyboard (and other types of) input entered into the computer.
+<samp>: For marking up the output of a computer program
+
+Representing Time
+======================================================================================================
+<time datetime="2016-01-20">20 January 2016</time>
+
+Allows something like grabbing the dates and inserting them into a calendar...
+datetime attribute can take upon a variety of different formats...
 
 
 
