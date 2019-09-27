@@ -1,0 +1,52 @@
+Art direction problem:
+The problem whereby you want to serve cropped images for different layouts... This can be solved using the <picture> element.
+
+you optimize for user experience (as opposed to bandwidth)
+
+Resolution switching: 
+The problem whereby you want to serve smaller image files to narrow screen devices, 
+as they don't need huge images like desktop displays do This can be solved using vector graphics (SVG images), 
+and the srcset and sizes attributes.
+
+optimizes bandwidth consumption for users with lower resolution displays
+
+==============================================================================================================================================
+
+<img srcset="elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+     
+srcset defines the set of images we will allow the browser to choose between, and what size each image is. Before each comma, we write:
+An image filename (elva-fairy-480w.jpg)
+A space
+The image's inherent width in pixels (480w) — note that this uses the w unit, not px as you might expect. 
+This is the image's real size, which can be found by inspecting the image file on your computer.
+
+sizes defines a set of media conditions (e.g. screen widths) and indicates what image size would be best to choose,
+when certain media conditions are true — these are the hints we talked about earlier. Before each comma we write:
+
+A media condition ((max-width:480px)) — a media condition describes a possible state that the screen can be in. 
+In this case, we are saying "when the viewport width is 480 pixels or less".
+
+A space
+The width of the slot the image will fill when the media condition is true (440px)
+
+ For the slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), 
+ but not percentages. You may have noticed that the last slot width has no media condition 
+ (this is the default that is chosen when none of the media conditions are true). 
+ The browser ignores everything after the first matching condition, so be careful how you order the media conditions.
+ 
+Look at its device width
+Work out which media condition in the sizes list is the first one to be true
+Look at the slot size given to that media query
+Load the image referenced in the srcset list that most closely matches the chosen slot size
+
+In the <head> of the document, you'll find the line <meta name="viewport" content="width=device-width">: 
+this forces mobile browsers to adopt their real viewport width for loading web pages 
+(some mobile browsers lie about their viewport width, and instead load pages at a larger viewport width 
+then shrink the loaded page down, which is not very helpful for responsive images or design).
+
