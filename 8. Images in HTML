@@ -1,0 +1,71 @@
+<img src="dinosaur.jpg">
+<img src="images/dinosaur.jpg"> better for SEO purposes
+<img src="https://www.example.com/images/dinosaur.jpg"> absolute link 
+
+Do not display an image on your webpage unless:
+
+1) you own the image
+2) you have received explicit, written permission from the image's owner, or
+3) you have ample proof that the image is, in fact, in the public domain.
+
+hotlinking - pointing src attribute at an image hosted on someone else's website that you don't have permission to link to
+
+don't do this, this slows your page and illegally steals somebody else's bandwidth
+
+alt attribute
+====================================================================================================================================
+textual description of the image used: 
+when the image cannot be seen/displayed
+takes a long time to render because of a slow internet connection.
+
+Decoration. 
+Use CSS background images for decorative images; otherwise, add a blank alt="". 
+
+Content. 
+If your image provides significant information, use brief alt text or the main text!
+Don't write redundant alt text.
+If the image is described adequately by the main text, you can just use alt="".
+
+Link. 
+If you put an image inside <a> tags, to turn an image into a link, you still must provide accessible link text. 
+Write it inside the same <a> element, or inside the image's alt attribute
+
+Text. 
+You should not put your text into images. If your main heading needs a drop shadow, use CSS.
+Supply the text inside the alt attribute if you can't avoid this...
+
+width, height, title attributes
+===================================================================================================================================
+TLDR: Don't really modify these, use CSS instead
+
+title attribute - can have support text, but it's better to put it in the main text instead...
+
+Figures and captions
+===================================================================================================================================
+<figure>
+  <img src="images/dinosaur.jpg"
+       alt="The head and torso of a dinosaur skeleton;
+            it has a large head with long sharp teeth"
+       width="400"
+       height="341">
+
+  <figcaption>A T-Rex on display in the Manchester University Museum.</figcaption>
+</figure>
+
+Figures: a code snippet, audio, video, equations, a table, or something else.
+
+figcaptions are for those who can see the image
+alt text is when they can't see the image
+Therefore, don't have them say the same thing!
+
+
+CSS Background images
+====================================================================================================================================
+p {
+  background-image: url("images/dinosaur.jpg");
+}
+
+This will apply a background image to every paragraph
+This is not semantic; this is unable to convey any other meaningful info
+
+
