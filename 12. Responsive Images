@@ -50,3 +50,18 @@ this forces mobile browsers to adopt their real viewport width for loading web p
 (some mobile browsers lie about their viewport width, and instead load pages at a larger viewport width 
 then shrink the loaded page down, which is not very helpful for responsive images or design).
 
+
+=============================================================================================================================================================
+There are several exciting new image formats (such as WebP and JPEG-2000) that can maintain a low file size and high quality at the same time. However, browser support is spotty.
+<picture> lets us continue catering to older browsers. You can supply MIME types inside type attributes so the browser can immediately reject unsupported file types:
+<picture>
+  <source type="image/svg+xml" srcset="pyramid.svg">
+  <source type="image/webp" srcset="pyramid.webp"> 
+  <img src="pyramid.png" alt="regular pyramid built from four equilateral triangles">
+</picture>
+
+
+Do not use the media attribute, unless you also need art direction.
+In a <source> element, you can only refer to images of the type declared in type.
+Use comma-separated lists with srcset and sizes, as needed.
+
