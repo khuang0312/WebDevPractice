@@ -1,0 +1,84 @@
+iframe src="https://developer.mozilla.org/en-US/docs/Glossary"
+        width="100%" height="500" frameborder="0"
+        allowfullscreen sandbox>
+  <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary">
+    Fallback link for browsers that don't support iframes
+  </a> </p>
+</iframe>
+
+<iframe> elements are designed to allow you to embed other web documents into the current document. 
+
+allowfullscreen
+If set, the <iframe> is able to be placed in fullscreen mode using the Full Screen API (somewhat beyond scope for this article.)
+
+frameborder
+If set to 1, this tells the browser to draw a border between this frame and other frames, which is the default behaviour. 
+0 removes the border. Using this isn't really recommended any more, as the same effect can be better achieved 
+using border: none; in your CSS.
+
+src
+This attribute, as with <video>/<img>, contains a path pointing to the URL of the document to be embedded.
+
+width and height
+These attributes specify the width and height you want the iframe to be.
+
+Fallback content
+In the same way as other similar elements like <video>, you can include fallback content between the 
+opening and closing <iframe></iframe> tags that will appear if the browser doesn't support the <iframe>. 
+In this case, we have included a link to the page instead. It is unlikely that you'll come across any browser 
+that doesn't support <iframe>s these days.
+
+sandbox
+This attribute, which works in slightly more modern browsers than the rest of the <iframe> features (e.g. IE 10 and above) 
+requests heightened security settings; we'll say more about this in the next section.
+
+set the iframe's src attribute with JavaScript after the main content is done with loading. 
+This makes your page usable sooner and decreases your official page load time (an important SEO metric.)
+============================================================================================================================================================
+
+Only embed when necessary
+
+Use HTTPS
+
+Always use the sandbox attribute
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox
+never add both allow-scripts and allow-same-origin to your sandbox attribute — in that case, 
+the embedded content could bypass the same origin security policy that stops sites from executing scripts, 
+and use JavaScript to turn off sandboxing altogether.
+
+Configure CSP directives
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+==========================================================================================================================================================
+
+ <embed> and <object> elements serve a different function to <iframe> — 
+ these elements are general purpose embedding tools for embedding multiple types of external content, 
+ which include plugin technologies like Java Applets and Flash, PDF (which can be shown in a browser with a PDF plugin), 
+ and even content like videos, SVG and images!
+ 
+ plugin - software that provides access to content the browser cannot read natively.
+ 
+ honestly though, you really shouldn't use these plug-ins...
+ 
+ 
+URL of the embedded content
+accurate media type of the embedded content
+height and width (in CSS pixels) of the box controlled by the plugin
+names and values, to feed the plugin as parameters
+independent HTML content as fallback for an unavailable resource
+ 
+<embed>
+src
+type
+height
+width
+ad-hoc attributes with those names and values
+not supported
+
+<object>
+data
+type
+height
+width
+single-tag <param> elements, contained within <object>
+contained within <object>, after <param> elements
