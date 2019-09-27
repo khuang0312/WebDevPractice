@@ -1,0 +1,106 @@
+video src="rabbit320.webm" controls>
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.webm">link to the video</a> instead.</p> 
+</video>
+
+src - same as the one in img
+controls - include browser controls or maybe your own (JS)
+paragraph - fallback content
+
+==================================================================================================================================
+different browsers support different video (and audio) formats
+
+container formats (MP3, WEBM)
+contain different parts that make up the whole song or video: audio track, visual track, metadata
+
+ audio and video tracks are also in different formats
+ https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility
+ 
+ Browsers contain different Codecs, like Vorbis or H.264, which are used to convert the compressed sound and video 
+ into binary digits and back. As indicated above, browsers unfortunately don't all support the same codecs, so you will have to 
+ provide several files for each media production. If you're missing the right codec to decode the media, it just won't play.
+ 
+ video controls width="400" height="400"
+       autoplay loop muted
+       poster="poster.png">
+  <source src="rabbit320.mp4" type="video/mp4">
+  <source src="rabbit320.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+
+the browser will go through the <source> elements and play the first one that it has the codec to support. 
+Including WebM and MP4 sources should be enough to play your video on most platforms and browsers these days.
+Each <source> element also has a optional type attribute, but it is advised that you include them 
+— they contain the MIME types of the video files, and browsers can read these and immediately skip videos they don't understand.
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats
+
+width and height
+You can control the video size either with these attributes or with CSS. 
+In both cases, videos maintain their native width-height ratio — known as the aspect ratio. 
+If the aspect ratio is not maintained by the sizes you set, 
+the video will grow to fill the space horizontally, and the unfilled space will just be given a solid background color by default.
+
+autoplay
+Makes the audio or video start playing right away, while the rest of the page is loading. 
+You are advised not to use autoplaying video (or audio) on your sites, because users can find it really annoying.
+
+loop
+Makes the video (or audio) start playing again whenever it finishes. This can also be annoying, so only use if really necessary.
+
+muted
+Causes the media to play with the sound turned off by default.
+
+poster
+The URL of an image which will be displayed before the video is played. 
+It is intended to be used for a splash screen or advertising screen.
+
+preload
+Used for buffering large files; it can take one of three values:
+"none" does not buffer the file
+"auto" buffers the media file
+
+"metadata" buffers only the metadata for the file
+======================================================================================================================================================
+
+Audio pretty much supports everything except width, height, and poster
+
+reset the media to the beginning—including the process of selecting the best media source by calling load method
+
+var mediaElem = document.getElementById("my-media-element");
+mediaElem.load();
+
+detecting track addition and removal
+var mediaElem = document.querySelector("video");
+mediaElem.audioTracks.onaddtrack = function(event) {
+  audioTrackAdded(event.track);
+}
+
+https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent
+
+
+==========================================================================================================================================
+Subtitles
+
+<track kind="subtitles" src="subtitles_en.vtt" srclang="en">
+WebVTT format
+
+subtitles
+Translations of foreign material, for people who don't understand the words spoken in the audio.
+
+captions
+Synchronized transcriptions of dialog or descriptions of significant sounds, 
+to let people who can't hear the audio understand what is going on.
+
+timed descriptions
+Text for conversion into audio, to serve people with visual impairments.
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
+
+1. Save it as a .vtt file in a sensible place.
+2. Link to the .vtt file with the <track> element. 
+3. <track> should be placed within <audio> or <video>, but after all <source> elements. 
+Use the kind attribute to specify whether the cues are subtitles, captions, or descriptions. 
+Further, use srclang to tell the browser what language you have written the subtitles in.
+
+
+
